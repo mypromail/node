@@ -20,7 +20,7 @@ Product.init({
     }
 }, {
     sequelize,
-    modelsName: 'product',
+    modelsName: 'products',
     timestamps: false
 });
 

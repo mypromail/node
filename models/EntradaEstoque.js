@@ -9,14 +9,14 @@ EntradaEstoque.init({
         primaryKey: true,
         autoIncrement: true
     },
-    id_produto: {
+    id_product: {
         type: DataTypes.INTEGER,
         references: {
-            models: 'product',
+            models: 'products',
             key: 'id_product'
         }
     },
-    quantidade: {
+    amount: {
         type: DataTypes.INTEGER
     },
     data_entrada:{
@@ -24,7 +24,7 @@ EntradaEstoque.init({
     }
 }, {
     sequelize,
-    modelName: 'entradaEstoque',
+    modelName: 'entradaestoques',
     timestamps: false
 });
 
