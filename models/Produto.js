@@ -9,7 +9,7 @@ Product.init({
         primaryKey: true,
         autoIncrement: true
     },
-    name_product: {
+    name_product: { 
         type: DataTypes.STRING
     },
     descricao: {
