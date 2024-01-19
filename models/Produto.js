@@ -21,7 +21,7 @@ Product.init({
 }, {
     sequelize,
     modelsName: 'products',
-    timestamps: false
+    timestamps: false   
 });
 
 module.exports = Product;
