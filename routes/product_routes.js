@@ -20,4 +20,6 @@ router.post('/estoque/:id/saida', stockController.registerExit);
 
 router.post('/contrato/', contractController.contract_create);
 
+router.post('/contrato/add/itens/', contractController.contracts_itens);
+
 module.exports = router;
