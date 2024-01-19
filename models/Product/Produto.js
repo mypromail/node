@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/sql_connection');
+const sequelize = require('../../config/sql_connection');
 
 class Product extends Model {}
 

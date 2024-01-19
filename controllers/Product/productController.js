@@ -1,6 +1,6 @@
-const StockEntry = require('../models/EntradaEstoque');
-const StockExit = require('../models/SaidaEstoque');
-const Product = require('../models/Produto');
+const StockEntry = require('../../models/Stock/EntradaEstoque');
+const StockExit = require('../../models/Stock/SaidaEstoque');
+const Product = require('../../models/Product/Produto');
 
 const ProductController = {
     createProduct: async (req, res) => {

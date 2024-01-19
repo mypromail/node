@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const productController = require('../controllers/productController');
-const stockController = require('../controllers/stockController');
+const productController = require('../controllers/Product/productController');
+const stockController = require('../controllers/Stock/stockController');
+const contractController = require('../controllers/Contract/contractController');
 
 router.post('/produtos', productController.createProduct);
 
@@ -16,5 +17,7 @@ router.delete('/produtos/:id', productController.deleteProduct);
 router.post('/estoque/:id/entrada', stockController.registerEntry);
 
 router.post('/estoque/:id/saida', stockController.registerExit);
+
+router.post('/contrato/', contractController.contract_create);
 
 module.exports = router;
