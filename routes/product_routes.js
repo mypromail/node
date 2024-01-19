@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
+const stockController = require('../controllers/stockController');
 
 router.post('/produtos', productController.createProduct);
 
@@ -12,8 +13,8 @@ router.put('/produtos/:id', productController.updateProduct);
 
 router.delete('/produtos/:id', productController.deleteProduct);
 
-router.post('/produtos/:id/entrada', productController.registerEntry);
+router.post('/estoque/:id/entrada', stockController.registerEntry);
 
-router.post('/produtos/:id/saida', productController.registerExit);
+router.post('/estoque/:id/saida', stockController.registerExit);
 
 module.exports = router;
