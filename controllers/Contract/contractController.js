@@ -1,11 +1,18 @@
 const Contract_Create = require('../../models/Contract/Contract');
 const Contract_Itens = require('../../models/Contract/Contracts_Itens');
 
+
 const contractController = {
 
     contract_create: async (req, res) => {
         try {
-            await Contract_Create.create({ data_contrato: new Date() });
+
+            const { id_client } = req.body;
+            if(!id_client){
+                res.send('CLIENTE TA NULO O SEU MERDA');
+            }
+
+            await Contract_Create.create({ id_client, data_contrato: new Date() });
             res.send('Contrato registrado com sucesso!');
         } catch (error) {
             res.status(500).send(error.message);

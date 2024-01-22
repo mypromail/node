@@ -1,0 +1,62 @@
+CREATE DATABASE node_project;
+USE node_project;
+
+CREATE TABLE products (
+    id_product INT PRIMARY KEY AUTO_INCREMENT,
+    name_product VARCHAR(120) NOT NULL,
+    descricao TEXT NOT NULL,
+    preco_unitario DECIMAL(9,2) NOT NULL
+);
+
+CREATE TABLE clients (
+    id_client INT PRIMARY KEY AUTO_INCREMENT,
+    name_client VARCHAR(120) NOT NULL,
+    telephone VARCHAR(14) NOT NULL,
+    CEP VARCHAR(9) NOT NULL,
+    CPF VARCHAR(14),
+    CNPJ VARCHAR(18)
+);
+
+CREATE TABLE entradaestoques (
+    id_entrada INT PRIMARY KEY AUTO_INCREMENT,
+    id_product INT NOT NULL,
+    amount INT NOT NULL,
+    data_entrada DATE NOT NULL,
+    FOREIGN KEY (id_product) REFERENCES products(id_product)
+);
+
+CREATE TABLE saidaestoques (
+    id_saida INT PRIMARY KEY AUTO_INCREMENT,
+    id_product INT NOT NULL,
+    amount INT NOT NULL,
+    data_saida DATE NOT NULL,
+    FOREIGN KEY (id_product) REFERENCES products(id_product)
+);
+
+CREATE TABLE contracts (
+    id_contrato INT PRIMARY KEY AUTO_INCREMENT,
+    id_client INT NOT NULL,
+    data_contrato DATE NOT NULL,
+    FOREIGN KEY (id_client) REFERENCES clients(id_client)
+);
+
+CREATE TABLE contract_items (
+    id_contract_item INT PRIMARY KEY AUTO_INCREMENT,
+    id_contrato INT NOT NULL,
+    id_product INT NOT NULL,
+    amount INT NOT NULL,
+    FOREIGN KEY (id_contrato) REFERENCES contracts(id_contrato),
+    FOREIGN KEY (id_product) REFERENCES products(id_product)
+);
+
+
+SELECT * FROM entradaestoques;
+SELECT * FROM contracts;
+SELECT * FROM contract_items;
+SELECT * FROM clients;
+SELECT * FROM products;
+SELECT * FROM saidaestoques;
+DROP TABLE entradaestoques;
+DROP TABLE saidaestoques;
+DROP TABLE contracts;
+DROP DATABASE node_project;

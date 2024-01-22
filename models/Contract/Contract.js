@@ -10,6 +10,10 @@ Contract.init({
         autoIncrement: true
     },
 
+    id_client: {
+        type: DataTypes.INTEGER
+    },
+
     data_contrato:{
         type: DataTypes.DATE
     }
