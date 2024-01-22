@@ -27,6 +27,54 @@ const contractController = {
         } catch (error) {
             res.status(500).send(error.message);
         }
+    },
+
+    getAllContracts: async (req, res) => {
+        try {
+            const Contracts = await Contract_Create.findAll();
+            res.json(Contracts);
+        } catch (error){
+            res.status(500).send(error.message);
+        }
+    },
+
+    getContractById: async (req, res) => {
+        try {
+            const Contract = await Contract_Create.findByPk(req.params.id);
+            if(!Contract) {
+                return res.status(500).send('Contrato não encontrado!');
+            }
+            res.json(Contract);
+        } catch (error) {
+            res.status(500).send(error.message);
+        }
+    },
+
+    updateContract: async (req, res) => {
+        try { 
+            const Contract = await Contract_Create.findByPk(req.params.id);
+            if(!Contract){
+                return res.status(404).send('Contrato não encontrado!');
+            }
+            await Contract.update(req.body);
+            res.send('Contrato atualizado com sucesso!');    
+    } catch ( error ) {
+        res.status(500).send(error.message);
+    }
+
+},
+
+    deleteContract: async (req, res) => {
+        try {
+            const Contract = await Contract_Create.findByPk(req.params.id);
+            if(!Contract){
+                return res.status(404).send('Contrato não encontrado!');
+            }
+            await Contract.destroy();
+            res.send('Contrato deletado com sucesso!');
+        }  catch (error) {
+            res.status(500).send(error.message);
+        }
     }
 
 };
