@@ -18,8 +18,8 @@ const stockController = {
 
     getAllStockEntrys: async (req, res) => {
         try {
-            const StockEntrys = await StockEntry.findAll();
-            res.json(StockEntrys);
+            const StockEntrysInstance = await StockEntry.findAll();
+            res.json(StockEntrysInstance);
         } catch (error){
             res.status(500).send(error.message);
         }
@@ -27,11 +27,11 @@ const stockController = {
 
     getStockEntryById: async (req, res) => {
         try {
-            const StockEntry = await StockEntry.findByPk(req.params.id);
-            if(!StockEntry) {
+            const StockEntryInstance = await StockEntry.findByPk(req.params.id);
+            if(!StockEntryInstance) {
                 return res.status(500).send('Entrada Estoque não encontrado!');
             }
-            res.json(StockEntry);
+            res.json(StockEntryInstance);
         } catch (error) {
             res.status(500).send(error.message);
         }
@@ -39,11 +39,11 @@ const stockController = {
 
     updateStockEntry: async (req, res) => {
         try { 
-            const StockEntry = await StockEntry.findByPk(req.params.id);
-            if(!StockEntry){
+            const StockEntryInstance = await StockEntry.findByPk(req.params.id);
+            if(!StockEntryInstance){
                 return res.status(404).send('Entrada Estoque não encontrado!');
             }
-            await StockEntry.update(req.body);
+            await StockEntryInstance.update(req.body);
             res.send('Entrada Estoque atualizado com sucesso!');    
     } catch ( error ) {
         res.status(500).send(error.message);
@@ -53,11 +53,11 @@ const stockController = {
 
     deleteStockEntry: async (req, res) => {
         try {
-            const StockEntry = await StockEntry.findByPk(req.params.id);
-            if(!StockEntry){
+            const StockEntryInstance = await StockEntry.findByPk(req.params.id);
+            if(!StockEntryInstance){
                 return res.status(404).send('Entrada Estoque não encontrado!');
             }
-            await StockEntry.destroy();
+            await StockEntryInstance.destroy();
             res.send('Entrada Estoque deletado com sucesso!');
         }  catch (error) {
             res.status(500).send(error.message);
@@ -99,11 +99,11 @@ const stockController = {
     
     getStockExitById: async (req, res) => {
         try {
-            const StockExit = await StockExit.findByPk(req.params.id);
-            if(!StockExit) {
+            const StockExitInstance = await StockExit.findByPk(req.params.id);
+            if(!StockExitInstance) {
                 return res.status(500).send('Saida Estoque não encontrado!');
             }
-            res.json(StockExit);
+            res.json(StockExitInstance);
         } catch (error) {
             res.status(500).send(error.message);
         }
@@ -111,11 +111,11 @@ const stockController = {
     
     updateStockExit: async (req, res) => {
         try { 
-            const StockExit = await StockExit.findByPk(req.params.id);
-            if(!StockExit){
+            const StockExitInstance = await StockExit.findByPk(req.params.id);
+            if(!StockExitInstance){
                 return res.status(404).send('Saida Estoque não encontrado!');
             }
-            await StockExit.update(req.body);
+            await StockExitInstance.update(req.body);
             res.send('Saida Estoque atualizado com sucesso!');    
     } catch ( error ) {
         res.status(500).send(error.message);
@@ -125,11 +125,11 @@ const stockController = {
     
     deleteStockExit: async (req, res) => {
         try {
-            const StockExit = await StockExit.findByPk(req.params.id);
-            if(!StockExit){
+            const StockExitInstance = await StockExit.findByPk(req.params.id);
+            if(!StockExitInstance){
                 return res.status(404).send('Saida Estoque não encontrado!');
             }
-            await StockExit.destroy();
+            await StockExitInstance.destroy();
             res.send('Saida Estoque deletado com sucesso!');
         }  catch (error) {
             res.status(500).send(error.message);
