@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name_product\" : \"Banana\",\r\n    \"descricao\" : \"A banana é uma fruta amarela\",\r\n    \"preco_unitario\" : 13.99\r\n}",
+							"raw": "{\r\n    \"name_product\" : \"Cebola\",\r\n    \"descricao\" : \"Auxiliam na prevenção de doenças do coração, diabetes, câncer e melhoram o sistema imunológico\",\r\n    \"preco_unitario\" : 7.49\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -133,7 +133,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id_product\" : 1,\r\n    \"amount\" : 6\r\n}",
+									"raw": "{\r\n    \"id_product\" : 10,\r\n    \"amount\" : 59\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -282,7 +282,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id_product\" : 3,\r\n    \"amount\" : 1\r\n}",
+									"raw": "{\r\n    \"id_product\" : 10,\r\n    \"amount\" : 1\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -433,7 +433,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id_client\" : 2\r\n}",
+							"raw": "{\r\n    \"id_client\" : 11\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -461,7 +461,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id_contrato\" : 13,\r\n    \"id_product\" : 1,\r\n     \"amount\" : 2\r\n}",
+							"raw": "{\r\n    \"id_contrato\" : 23,\r\n    \"id_product\" : 2,\r\n     \"amount\" : 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -499,6 +499,27 @@
 							"port": "3000",
 							"path": [
 								"contrato",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Contracts Itens",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/contrato/itens/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"contrato",
+								"itens",
 								""
 							]
 						}
@@ -607,7 +628,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name_client\" : \"Banana\",\r\n    \"telephone\" : \"(47)98855-7999\",\r\n    \"CEP\" : \"89025-420\",\r\n    \"CPF\" : \"140.115.689-45\"\r\n}",
+							"raw": "{\r\n    \"name_client\" : \"João da Silva\",\r\n    \"telephone\" : \"(12) 3456-7890\",\r\n    \"CEP\" : \"89070-000\",\r\n    \"CNPJ\" : \"92.345.678/0001-90\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
