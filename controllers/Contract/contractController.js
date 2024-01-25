@@ -38,6 +38,15 @@ const contractController = {
         }
     },
 
+    getAllContractsItens: async (req, res) => {
+        try {
+            const Contracts = await Contract_Itens.findAll();
+            res.json(Contracts);
+        } catch (error){
+            res.status(500).send(error.message);
+        }
+    },
+
     getContractById: async (req, res) => {
         try {
             const Contract = await Contract_Create.findByPk(req.params.id);

@@ -50,6 +50,8 @@ router.post('/contrato/add/itens/', contractController.contracts_itens);
 
 router.get('/contrato', contractController.getAllContracts);
 
+router.get('/contrato/itens', contractController.getAllContractsItens);
+
 router.get('/contrato/:id', contractController.getContractById);
 
 router.put('/contrato/:id', contractController.updateContract);
